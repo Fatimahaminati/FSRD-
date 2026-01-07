@@ -36,3 +36,6 @@ def akademik_detail(request, slug):
     from django.shortcuts import get_object_or_404
     obj = get_object_or_404(Akademik, slug=slug)
     return render(request, 'akademik_detail.html', {'item': obj})
+
+def kontak(request):
+    return render(request, 'kontak.html')

@@ -3,8 +3,20 @@
 {% block content %}
 <header class="py-5 text-center bg-light border-bottom">
     <div class="container py-5">
-        <h1 class="display-4 fw-bold text-ums">Fakultas Seni Rupa Dan Desain UMS</h1>
-        <p class="lead text-muted">Mencetak Seniman berbakat dan Islami</p>
+        <h1 class="display-4 fw-bold text-ums site-title">Fakultas Seni Rupa Dan Desain UMS</h1>
+        <p class="lead text-muted subhead">Mencetak Seniman berbakat dan Islami</p>
+        <p class="mt-3 text-muted">Fakultas Seni Rupa dan Desain (FSRD) Universitas Muhammadiyah Surakarta merupakan fakultas yang berfokus pada pengembangan kreativitas, estetika, dan keilmuan di bidang seni rupa dan desain. Fakultas ini bertujuan untuk mencetak lulusan yang memiliki kemampuan konseptual, teknis, dan artistik, serta mampu beradaptasi dengan perkembangan industri kreatif dan teknologi digital.</p>
+
+        <h3 class="fw-bold mt-4">Visi</h3>
+        <p class="text-muted">Menjadi fakultas unggul dalam bidang seni rupa dan desain yang berlandaskan nilai-nilai Islam, berwawasan global, serta berkontribusi aktif dalam pengembangan industri kreatif dan budaya.</p>
+
+        <h3 class="fw-bold mt-3">Misi</h3>
+        <ul class="list-unstyled text-muted">
+            <li>Menyelenggarakan pendidikan seni rupa dan desain yang berkualitas dan berorientasi pada pengembangan kreativitas mahasiswa.</li>
+            <li>Mengintegrasikan nilai-nilai Islam dalam proses pembelajaran dan penciptaan karya seni.</li>
+            <li>Mengembangkan penelitian dan karya seni yang inovatif serta relevan dengan kebutuhan masyarakat.</li>
+            <li>Mendorong mahasiswa dan dosen untuk berperan aktif dalam kegiatan pengabdian kepada masyarakat di bidang seni dan desain.</li>
+        </ul>
     </div>
 </header>
 
@@ -21,7 +33,7 @@
                     <div class="card-body">
                         <h5 class="fw-bold">{{ b.judul }}</h5>
                         <p class="text-muted small">{{ b.isi|truncatewords:15 }}</p>
-                        <a href="{% url 'detail_berita' b.id %}" class="btn btn-primary btn-sm">Baca Selengkapnya</a>
+                        <a href="{% url 'detail_berita' b.id %}" class="btn btn-ums btn-sm">Baca Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +59,7 @@
                         {% else %}
                         <p class="text-muted small">{{ a.full|truncatewords:20 }}</p>
                         {% endif %}
-                        <a href="{% url 'akademik_detail' a.slug %}" class="btn btn-primary btn-sm">Selengkapnya</a>
+                        <a href="{% url 'akademik_detail' a.slug %}" class="btn btn-ums btn-sm">Selengkapnya</a>
                     </div>
                 </div>
             </div>

@@ -12,6 +12,7 @@ urlpatterns = [
     path('dosen/', views.dosen_list, name='dosen_list'),
     path('akademik/', views.akademik, name='akademik'),
     path('akademik/<slug:slug>/', views.akademik_detail, name='akademik_detail'),
+    path('kontak/', views.kontak, name='kontak'),
 ]
 
 if settings.DEBUG:
