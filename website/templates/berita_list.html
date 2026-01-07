@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="fw-bold mb-4 text-ums">Berita</h1>
+        <div class="row">
+            {% for b in berita %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    {% if b.gambar %}
+                    <img src="{{ b.gambar.url }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="fw-bold">{{ b.judul }}</h5>
+                        <p class="text-muted small">{{ b.isi|truncatewords:20 }}</p>
+                        <a href="{% url 'detail_berita' b.id %}" class="btn btn-primary btn-sm">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>Tidak ada berita.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

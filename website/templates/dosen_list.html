@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-5 bg-light">
+    <div class="container">
+        <h1 class="fw-bold mb-4 text-ums">Tenaga Akademik</h1>
+        <div class="row">
+            {% for d in dosen %}
+            <div class="col-md-3 mb-4 text-center">
+                <div class="p-3 bg-white rounded shadow-sm">
+                    {% if d.foto %}
+                    <img src="{{ d.foto.url }}" class="rounded-circle mb-3 shadow" style="width: 120px; height: 120px; object-fit: cover;">
+                    {% endif %}
+                    <h6 class="fw-bold mb-0">{{ d.nama }}</h6>
+                    <small class="text-muted">{{ d.jabatan }}</small>
+                </div>
+            </div>
+            {% empty %}
+            <p>Tidak ada data dosen.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

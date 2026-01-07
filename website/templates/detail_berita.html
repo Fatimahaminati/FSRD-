@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="fw-bold text-ums">{{ berita.judul }}</h1>
+            <p class="text-muted small">Diposting pada: {{ berita.tanggal|date:"d M Y" }}</p>
+            <hr>
+            {% if berita.gambar %}
+            <img src="{{ berita.gambar.url }}" class="img-fluid rounded mb-4 shadow w-100">
+            {% endif %}
+            <div class="lh-lg" style="text-align: justify;">
+                {{ berita.isi|linebreaks }}
+            </div>
+            <div class="mt-5">
+                <a href="{% url 'index' %}" class="btn btn-outline-secondary">&larr; Kembali ke Beranda</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

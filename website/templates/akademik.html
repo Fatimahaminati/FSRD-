@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="fw-bold mb-4 text-ums">Akademik</h1>
+        <div class="row">
+            {% for it in items %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    {% if it.image %}
+                    <img src="{{ it.image.url }}" class="card-img-top" style="height:180px; object-fit:cover;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="fw-bold">{{ it.title }}</h5>
+                        <p class="text-muted">{{ it.short }}</p>
+                        <a href="{% url 'akademik_detail' it.slug %}" class="btn btn-outline-primary btn-sm">Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
